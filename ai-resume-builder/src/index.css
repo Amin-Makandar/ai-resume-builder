@@ -1,0 +1,597 @@
+/* =======================================
+   Global Styles
+======================================= */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #f8f9fa;
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+h1, h2, h4 {
+  font-weight: 600;
+}
+
+.btn {
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.03);
+}
+
+/* =======================================
+   Navbar
+======================================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #5b3fe2, #6f72ff, #9f5fff, #ff7bd3);
+  background-size: 300% 300%;
+  animation: gradientShift 6s ease infinite;
+  padding: 0.8rem 2rem;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-item::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background-color: #fff;
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+.nav-item.active {
+  color: #ffefb8;
+}
+
+.get-started-btn {
+  background-color: #ffffff;
+  color: #6f72ff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0px 3px 8px rgba(255, 255, 255, 0.3);
+}
+
+.get-started-btn:hover {
+  background-color: #ff7bd3;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+}
+
+/* =======================================
+   Footer
+======================================= */
+.footer {
+  background: linear-gradient(135deg, #ff7bd3, #6f72ff, #5b3fe2);
+  color: #fff;
+  padding: 1.5rem 0;
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer .social-icons {
+  display: flex;
+  gap: 1rem;
+  font-size: 1.3rem;
+}
+
+.footer .social-icons a {
+  color: #fff;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .social-icons a:hover {
+  color: #ffefb8;
+  transform: scale(1.2);
+}
+
+/* =======================================
+   Home / Hero Sections
+======================================= */
+.hero-section {
+  background: linear-gradient(135deg, #6f72ff, #ff7bd3, #ffb2e6);
+  color: #fff;
+  padding: 6rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 3rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.features-section .feature-card,
+.about-features .feature-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  margin: 1rem 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.features-section .feature-card:hover,
+.about-features .feature-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: #6f72ff;
+  margin-bottom: 1rem;
+}
+
+.how-section .step-card,
+.about-team .team-card {
+  background: #f0f4ff;
+  padding: 1.5rem;
+  border-radius: 15px;
+  margin: 1rem 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.how-section .step-card:hover,
+.about-team .team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.step-number {
+  width: 50px;
+  height: 50px;
+  background: #6f72ff;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem auto;
+}
+
+.cta-section {
+  background: #6f72ff;
+  color: #fff;
+  padding: 3rem 1rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.cta-section .btn-success {
+  background: #ff7bd3;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.cta-section .btn-success:hover {
+  background: #ff4fa3;
+  transform: scale(1.05);
+}
+
+.about-hero {
+  background: linear-gradient(135deg, #6f72ff, #ff7bd3);
+  color: #fff;
+  padding: 5rem 1rem;
+  border-radius: 20px;
+  margin-bottom: 3rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+/* =======================================
+   Resume Builder
+======================================= */
+.resume-builder-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-card {
+  border-radius: 15px;
+  background: #f8f9fa;
+  padding: 1rem;
+}
+
+.form-card input, .form-card textarea, .form-card select {
+  border-radius: 8px;
+}
+
+.preview-card {
+  border-radius: 15px;
+  background: #ffffff;
+}
+
+.edu-section, .exp-section {
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+button {
+  border-radius: 8px;
+}
+
+/* =======================================
+   Resume Preview - Base
+======================================= */
+.resume-preview {
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #fff;
+}
+
+/* Header */
+.resume-header {
+  padding: 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(111,114,255,0.2);
+  text-align: center;
+}
+
+.resume-name {
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.resume-contact {
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Sections */
+.resume-section {
+  border-radius: 15px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resume-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.section-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  padding-bottom: 2px;
+  display: inline-block;
+}
+
+/* Education / Experience Cards */
+.edu-card, .exp-card {
+  border-left: 3px solid #0d6efd;
+  padding-left: 12px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.edu-card:hover, .exp-card:hover {
+  transform: scale(1.02);
+  background-color: rgba(0,0,0,0.03);
+}
+
+.edu-degree {
+  font-weight: bold;
+  font-family: 'Georgia', serif;
+  font-size: 1rem;
+  color: #4a4a4a;
+}
+
+.edu-school {
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.edu-details {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #666;
+}
+
+.exp-role {
+  font-weight: bold;
+  font-size: 1rem;
+  color: #4a4a4a;
+}
+
+.exp-company, .exp-duration {
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.exp-desc, .exp-cert, .exp-projects {
+  font-size: 0.85rem;
+  color: #555;
+  margin-top: 0.3rem;
+}
+
+.exp-type {
+  font-weight: bold;
+}
+
+/* Skills */
+.skills-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skill-badge {
+  background: linear-gradient(135deg, #6f72ff, #ff7bd3);
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  transition: transform 0.3s ease;
+}
+
+.skill-badge:hover {
+  transform: scale(1.1);
+}
+
+/* =======================================
+   Resume Preview - Templates
+======================================= */
+
+/* TEMPLATE 1: Corporate Blue */
+.resume-preview.template1 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+  background-color: #fdfdfd;
+}
+
+.resume-preview.template1 .resume-header {
+  border-bottom: 3px solid #0d6efd;
+}
+
+.resume-preview.template1 .section-title {
+  color: #0d6efd;
+  border-left: 4px solid #0d6efd;
+  padding-left: 8px;
+}
+
+.resume-preview.template1 .skill-badge {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+/* TEMPLATE 2: Elegant Dark Mode */
+.resume-preview.template2 {
+  font-family: 'Georgia', serif;
+  color: #f5f5f5;
+  background-color: #1f1f1f;
+}
+
+.template2 .resume-header {
+  border-bottom: 3px solid #ffc107;
+  padding: 15px 0;
+  text-align: center;
+  background-color: #2a2a2a;
+  border-radius: 10px 10px 0 0;
+}
+
+.template2 .resume-name {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffc107;
+}
+
+.template2 .resume-contact {
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+.template2 .resume-section {
+  background-color: #2a2a2a;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.template2 .section-title {
+  color: #ffc107;
+  border-left: 4px solid #ffc107;
+  padding-left: 8px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.template2 .edu-card, 
+.template2 .exp-card {
+  border-left: 4px solid #ffc107;
+  padding-left: 12px;
+  margin-bottom: 0.5rem;
+  background-color: #333;
+  border-radius: 6px;
+}
+
+.template2 .skill-badge {
+  background-color: #333;
+  color: #ffc107;
+  padding: 5px 12px;
+  margin: 2px;
+  border-radius: 20px;
+}
+
+/* TEMPLATE 3: light Theme */
+.resume-preview.template3 {
+  font-family: 'Arial', sans-serif;
+  color: #1a1a1a;
+  background-color: #fefdf9;
+}
+
+.template3 .resume-header {
+  border-bottom: 3px solid #198754;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 10px 10px 0 0;
+}
+
+.template3 .resume-name {
+  font-size: 1.9rem;
+  font-weight: bold;
+  color: #198754;
+}
+
+.template3 .resume-contact {
+  font-size: 0.9rem;
+  text-align: right;
+  color: #555;
+}
+
+.template3 .resume-section {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-left: 4px solid #198754;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.template3 .section-title {
+  color: #198754;
+  border-left: 4px solid #198754;
+  padding-left: 8px;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.template3 .edu-card, 
+.template3 .exp-card {
+  border-left: 4px solid #198754;
+  padding-left: 12px;
+  margin-bottom: 0.5rem;
+  border-radius: 6px;
+}
+
+.template3 .skill-badge {
+  background-color: #198754;
+  color: #fff;
+  padding: 5px 12px;
+  margin: 2px;
+  border-radius: 20px;
+}
+
+/* TEMPLATE Card Borders */
+.resume-preview.template1 .edu-card, .resume-preview.template1 .exp-card {
+  border-left: 3px solid #0d6efd;
+}
+
+.resume-preview.template2 .edu-card, .resume-preview.template2 .exp-card {
+  border-left: 3px solid #ffc107;
+}
+
+.resume-preview.template3 .edu-card, .resume-preview.template3 .exp-card {
+  border-left: 3px solid #198754;
+}
+
+/* =======================================
+   Responsive
+======================================= */
+@media (max-width: 768px) {
+  .resume-header {
+    padding: 1rem;
+  }
+
+  .resume-name {
+    font-size: 1.5rem;
+  }
+
+  .resume-section {
+    padding: 0.8rem;
+  }
+
+  .edu-card, .exp-card {
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+/* Contact page style */
+form {
+  background-color: #fdfdfd;
+}
+
+form input, form textarea {
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+form button {
+  border-radius: 8px;
+}
