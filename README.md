@@ -8,3 +8,10 @@ pip install -r requirements.txt
 
 3. Run the application
 streamlit run app/main.py
+
+## Screenshots
+
+### Home Page
+![Home](docs/screenshots/Optimizer.png)
+
+
